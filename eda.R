@@ -24,10 +24,12 @@ my_sheet <- read_sheet(sheet_url, range = "DougScore!A4:T"
                                        , "FilmingLocationState"
                                        , "FilmingLocationCity"
                                        , "VehicleCountry"))
+
+
 dt <- data.table(my_sheet)
 dt[, Model := as.character(Model)]
 
-ref_dt <- read.csv("../../../Downloads/Car Dataset 1945-2020.csv")
+ref_dt <- read.csv("./Car Dataset 1945-2020.csv")
 ref_dt <- data.table(ref_dt)
 
 setnames(ref_dt, "Modle", "Model")
